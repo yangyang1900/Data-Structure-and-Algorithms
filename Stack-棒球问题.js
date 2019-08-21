@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-21 23:48:48
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-22 01:07:19
+* @Last Modified time: 2019-08-22 07:56:18
 */
 
 /*
@@ -36,7 +36,6 @@ leetcode 682题 棒球比赛（https://leetcode-cn.com/problems/baseball-game/�
 function baseballGame(arr){
 
 	let result = []		//用数组来实现堆栈结构，pop，push
-
 	//上一个数据
 	let pre1
 	//上上一个数据（+号要处理前两个数据）
@@ -44,7 +43,6 @@ function baseballGame(arr){
 	let pre
 
 	arr.forEach(item =>{
-
 		switch (item){
 			case 'C':
 				if(result.length){
@@ -69,7 +67,6 @@ function baseballGame(arr){
 				result.push(+item)
 		}
 	})
-
 	return result.reduce((total,num) => {return total+num})
 }
 
