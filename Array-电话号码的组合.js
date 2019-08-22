@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-22 07:58:40
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-22 10:46:56
+* @Last Modified time: 2019-08-22 10:52:43
 */
 
 /*
@@ -49,11 +49,11 @@ function letterCombinations(digits){
 			let tmp = []	//临时变量，存储前两项合并的结果，还要把这个结果放入到arr（code）中
 			
 			//遍历前两项（两层循环）
-			for (let i = 0, il = arr[0].length; i < il; i++) {
-		        for (let j = 0, jl = arr[1].length; j < jl; j++) {
-		          tmp.push(`${arr[0][i]}${arr[1][j]}`)
-		        }
-		    }
+			for(let i=0;i<arr[0].length;i++){
+				for(let j=0;j<arr[1].length;j++){
+					tmp.push(`${arr[0][i]}${arr[1][j]}`)
+				}
+			}
 
 			//splice替换掉code前两项
 			arr.splice(0,2,tmp)
