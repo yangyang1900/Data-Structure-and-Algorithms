@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-22 07:58:40
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-22 10:52:43
+* @Last Modified time: 2019-08-22 11:04:30
 */
 
 /*
@@ -51,7 +51,7 @@ function letterCombinations(digits){
 			//遍历前两项（两层循环）
 			for(let i=0;i<arr[0].length;i++){
 				for(let j=0;j<arr[1].length;j++){
-					tmp.push(`${arr[0][i]}${arr[1][j]}`)
+					tmp.push(`${arr[0][i]}${arr[1][j]}`)	//字符串拼接var a = 'a';var b = 'b';var c = `${a}+${b}`; c=> "a+b"
 				}
 			}
 
@@ -73,3 +73,5 @@ function letterCombinations(digits){
 	})
 
 }
+
+letterCombinations("23")
