@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-21 23:48:48
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-22 07:56:18
+* @Last Modified time: 2019-08-22 09:59:59
 */
 
 /*
@@ -63,10 +63,12 @@ function baseballGame(arr){
 					result.push(pre)
 				}
 				break
-			default: 	//数字情况做默认处理
+			default: 	//数字情况做默认处理，我们还要注意输入的是字符串，我们利用+号特性，转成数字（+'1'
 				result.push(+item)
 		}
 	})
 	return result.reduce((total,num) => {return total+num})
 }
+
+baseballGame(["5","2","C","D","+"])
 
