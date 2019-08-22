@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-22 19:35:25
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-22 19:50:22
+* @Last Modified time: 2019-08-22 19:52:00
 */
 
 /*
@@ -10,6 +10,11 @@
 双端队列：deque，或称doubl-ended queue，是一种有序我们同时从前端和后端添加和移除元素的特殊队列
 
 主要是是添加方法addFront()和之前不一样，其他和队列和栈操作类似
+
+参考文章：
+https://www.cnblogs.com/justbecoder/p/11383570.html
+https://segmentfault.com/a/1190000020096845#articleHeader8
+
 
 */
 
