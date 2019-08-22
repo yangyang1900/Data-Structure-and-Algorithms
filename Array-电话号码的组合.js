@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-22 07:58:40
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-22 11:04:30
+* @Last Modified time: 2019-08-22 11:41:31
 */
 
 /*
@@ -45,32 +45,33 @@ function letterCombinations(digits){
 			code.push(map[item])	//进行映射，然后填入code
 		}
 
-		let comb = (arr) =>{	//声明一个方法，给他一个数组，就可以进行合并
-			let tmp = []	//临时变量，存储前两项合并的结果，还要把这个结果放入到arr（code）中
-			
-			//遍历前两项（两层循环）
-			for(let i=0;i<arr[0].length;i++){
-				for(let j=0;j<arr[1].length;j++){
-					tmp.push(`${arr[0][i]}${arr[1][j]}`)	//字符串拼接var a = 'a';var b = 'b';var c = `${a}+${b}`; c=> "a+b"
-				}
-			}
-
-			//splice替换掉code前两项
-			arr.splice(0,2,tmp)
-
-			//递归
-			if(arr.length>1){
-				comb(arr)
-			}else{
-				return tmp
-			}
-
-			return arr[0]	//数组最后就一个元素，返回数组第一个元素的内容
-		}
-		//code调用comb函数
-		return comb(code)
-
 	})
+    
+    let comb = (arr) =>{	//声明一个方法，给他一个数组，就可以进行合并
+			
+        let tmp = []	//临时变量，存储前两项合并的结果，还要把这个结果放入到arr（code）中
+			
+		//遍历前两项（两层循环）
+		for(let i=0;i<arr[0].length;i++){
+			for(let j=0;j<arr[1].length;j++){
+				tmp.push(`${arr[0][i]}${arr[1][j]}`)
+			}
+		}
+
+		//splice替换掉code前两项
+		arr.splice(0,2,tmp)
+
+		//递归
+		if(arr.length>1){
+			comb(arr)
+		}else{
+			return tmp
+		}
+
+		return arr[0]	//数组最后就一个元素，返回数组第一个元素的内容
+	}
+	//code调用comb函数
+	return comb(code)
 
 }
 
