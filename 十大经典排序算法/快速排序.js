@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-25 09:01:32
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-25 09:06:20
+* @Last Modified time: 2019-08-25 09:46:10
 */
 
 /*
@@ -13,7 +13,7 @@ https://github.com/hustcc/JS-Sorting-Algorithm/blob/master/6.quickSort.md
 https://www.jianshu.com/p/f5b157a974b0
 */
 
-//借助新的数组，这种比较好理解
+//方法一：借助新的数组，这种比较好理解
 var quickSort = function(arr) {
 　　if (arr.length <= 1) { return arr; }
 　　var pivotIndex = Math.floor(arr.length / 2);
@@ -30,7 +30,7 @@ var quickSort = function(arr) {
 　　return quickSort(left).concat([pivot], quickSort(right));
 };
 
-//不借助新数组
+//方法二：不借助新数组
 function quickSort(arr, left, right) {
     /*
      * len为数组的长度;
