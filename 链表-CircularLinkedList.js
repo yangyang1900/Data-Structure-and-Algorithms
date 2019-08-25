@@ -2,106 +2,203 @@
 * @Author: yangyang
 * @Date:   2019-08-22 21:40:48
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-22 21:51:32
+* @Last Modified time: 2019-08-22 21:54:10
 */
 
 /*
 	顾名思义，循环链表的尾部指向它自己的头部。循环链表可以有单向循环链表，也可以有双向循环链表。
-	参考文章：https://www.cnblogs.com/jaxu/p/11277732.html
+	参考文章：
+	https://www.cnblogs.com/jaxu/p/11277732.html
+	https://www.cnblogs.com/xiaohuochai/p/8175716.html#anchor4
+
 */
 
-function CircularLinkedList () {
-  function Node (element) {
-    this.element = element;
-    this.next = null;
-    this.prev = null;        // 新增
-  }
+function CircularLinkedList() {
 
-  var length = 0;
-  var head = null;
-  var tail = null;          // 新增
+    let Node = function(element){
 
-  //链表里方法
-  this.append = function (element) {};
-  this.insert = function (position, element) {};
-  this.removeAt = function (position) {};
-  this.remove = function (element) {};
-  this.indexOf = function (element) {};
-  this.isEmpty = function () {};
-  this.size = function () {};
-  this.getHead = function () {};
-  this.toString = function () {};
-  this.print = function () {};
+        this.element = element;
+        this.next = null;
+    };
 
-}
+    let length = 0;
+    let head = null;
 
-this.append (element) {
-	let node = new LinkedList.Node(element);
+    this.append = function(element){
 
-	if (this.head === null) this.head = node;
-	else {
-	 let current = this.getElementAt(this.length - 1);
-	 current.next = node;
-	}
+        let node = new Node(element),
+            current;
 
-	node.next = this.head; // 将新添加的元素的next指向head
-	this.length++;
-}
+        if (head === null){ //first node on list
+            head = node;
+        } else {
 
-this.insert (position, element) {
-	// position不能超出边界值
-	if (position < 0 || position > this.length) return false;
+            current = head;
 
-	let node = new LinkedList.Node(element);
+            //loop the list until find last item
+            while(current.next !== head){ //last element will be head instead of NULL
+                current = current.next;
+            }
 
-	if (position === 0) {
-	 node.next = this.head;
-	 let current = this.getElementAt(this.length - 1);
-	 current.next = node;
-	 this.head = node;
-	}
-	else {
-	 let previous = this.getElementAt(position - 1);
-	 node.next = previous.next;
-	 previous.next = node;
-	}
+            //get last item and assign next to added item to make the link
+            current.next = node;
+        }
 
-	this.length++;
-	return true;
-}
+        //set node.next to head - to have circular list
+        node.next = head;
 
-this.removeAt (position) {
-	if (position < 0 || position >= this.length) return null;
+        length++; //update size of list
+    };
 
-	let current = this.head;
+    this.insert = function(position, element){
 
-	if (position === 0) this.head = current.next;
-	else {
-	 let previous = this.getElementAt(position - 1);
-	 current = previous.next;
-	 previous.next = current.next;
-	}
-	this.length--;
+        //check for out-of-bounds values
+        if (position >= 0 && position <= length){
 
-	if (this.length > 1) {
-	 let last = this.getElementAt(this.length - 1);
-	 last.next = this.head;
-	}
+            let node = new Node(element),
+                current = head,
+                previous,
+                index = 0;
 
+            if (position === 0){ //add on first position
+                
+                if(!head){ // if no node  in list
+                    head = node;
+                    node.next = head;
+                }else{
+                    node.next = current;
 
-	return current.element;
-}
+                    //update last element
+                    while(current.next !== head){ //last element will be head instead of NULL
+                        current = current.next;
+                    }
 
-this.toString () {
-	let current = this.head;
-	let s = '';
+                    head = node;
+                    current.next = head;
+                }
+                
 
-	for (let i = 0; i < this.length; i++) {
-	 let next = current.next;
-	 next = next ? next.element : 'null';
-	 s += `[element: ${current.element}, next: ${next}] `;
-	 current = current.next;
-	}
+            } else {
+                while (index++ < position){
+                    previous = current;
+                    current = current.next;
+                }
+                node.next = current;
+                previous.next = node;
+            }
 
-	return s;
+            length++; //update size of list
+
+            return true;
+
+        } else {
+            return false;
+        }
+    };
+
+    this.removeAt = function(position){
+
+        //check for out-of-bounds values
+        if (position > -1 && position < length){
+
+            let current = head,
+                previous,
+                index = 0;
+
+            //removing first item
+            if (position === 0){
+
+                while(current.next !== head){ //needs to update last element first
+                    current = current.next;
+                }
+
+                head = head.next;
+                current.next = head;
+
+            } else { //no need to update last element for circular list
+
+                while (index++ < position){
+
+                    previous = current;
+                    current = current.next;
+                }
+
+                //link previous with current's next - skip it to remove
+                previous.next = current.next;
+            }
+
+            length--;
+
+            return current.element;
+
+        } else {
+            return null;
+        }
+    };
+
+    this.remove = function(element){
+
+        let index = this.indexOf(element);
+        return this.removeAt(index);
+    };
+
+    this.indexOf = function(element){
+
+        let current = head,
+            index = -1;
+
+        //check first item
+        if (element == current.element){
+            return 0;
+        }
+
+        index++;
+
+        //check in the middle of the list
+        while(current.next !== head){
+
+            if (element == current.element){
+                return index;
+            }
+
+            current = current.next;
+            index++;
+        }
+
+        //check last item
+        if (element == current.element){
+            return index;
+        }
+
+        return -1;
+    };
+
+    this.isEmpty = function() {
+        return length === 0;
+    };
+
+    this.size = function() {
+        return length;
+    };
+
+    this.getHead = function(){
+        return head;
+    };
+
+    this.toString = function(){
+
+        let current = head,
+            s = current.element;
+
+        while(current.next !== head){
+            current = current.next;
+            s += ', ' + current.element;
+        }
+
+        return s.toString();
+    };
+
+    this.print = function(){
+        console.log(this.toString());
+    };
 }

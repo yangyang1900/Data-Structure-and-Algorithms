@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-22 23:04:57
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-24 10:59:43
+* @Last Modified time: 2019-08-25 08:34:00
 */
 
 /*
@@ -22,6 +22,8 @@ leetcode 148 排序链表 https://leetcode-cn.com/problems/sort-list/
 
 冒泡排序、选择性排序、插入排序：O(n2)
 堆排序、归并排序、快速排序：O(nln)
+
+本篇使用快速排序，注意数组快速排序和链表快速排序的差别
 
 */
 
