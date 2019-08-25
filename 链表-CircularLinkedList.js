@@ -2,11 +2,12 @@
 * @Author: yangyang
 * @Date:   2019-08-22 21:40:48
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-22 21:50:25
+* @Last Modified time: 2019-08-22 21:51:32
 */
 
 /*
 	顾名思义，循环链表的尾部指向它自己的头部。循环链表可以有单向循环链表，也可以有双向循环链表。
+	参考文章：https://www.cnblogs.com/jaxu/p/11277732.html
 */
 
 function CircularLinkedList () {
