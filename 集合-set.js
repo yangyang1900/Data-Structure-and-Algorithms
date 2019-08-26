@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-26 09:30:01
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-26 16:38:03
+* @Last Modified time: 2019-08-26 16:45:13
 */
 
 /*
@@ -57,6 +57,8 @@ class Set{
 const set = new Set()
 set.add(1)	//add方法
 set.add(2)
+
+set.delete(1)	//delete方法
 
 set.has(1)	//have方法
 
