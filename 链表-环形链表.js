@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-25 23:08:37
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-26 09:16:24
+* @Last Modified time: 2019-08-26 09:22:38
 */
 
 /*
@@ -67,6 +67,11 @@ function isCircle(head){
 	}
 
 }
+
+//测试代码
+let head  = new  NodeList([6,1,2,5,7,9])
+head.next.next.next.next.next.next = head.next //设置环状
+isCircle(head)
 
 
 
