@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-26 09:30:01
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-26 10:30:40
+* @Last Modified time: 2019-08-26 16:38:03
 */
 
 /*
@@ -11,6 +11,7 @@
 我们使用对象而不是数组来表示集合
 */
 
+//1.ES5实现集合Set
 class Set{
 
 	constructor(){
@@ -50,3 +51,16 @@ class Set{
 	}
 
 }
+
+//2.ES6实现，ECMAScript2015新增了Set类作为JavaScript API的一部分
+
+const set = new Set()
+set.add(1)	//add方法
+set.add(2)
+
+set.has(1)	//have方法
+
+set.values()	//返回的是Iterator，而不是值构成的数组，可以用for of遍历
+
+set.size	//返回2，size是Set的一个属性
+
