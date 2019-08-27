@@ -78,7 +78,7 @@
 
 
 
-![åå¤§ç»å¸æåºç®æ³ æ¦è§æªå¾](https://github.com/hustcc/JS-Sorting-Algorithm/raw/master/res/sort.png) 
+![十大排序算法时间复杂度和空间复杂度以及稳定性](https://github.com/hustcc/JS-Sorting-Algorithm/raw/master/res/sort.png) 
 
 
 
