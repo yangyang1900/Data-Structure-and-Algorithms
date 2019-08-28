@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-28 08:27:42
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-28 08:56:13
+* @Last Modified time: 2019-08-28 15:59:14
 */
 
 /*
@@ -38,16 +38,16 @@ letcode 804 唯一摩尔斯密码词
 
 let uniqueMorseRepresentations = function(words){
 
-	let code = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]；
+	let code = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."];
 	//因为abc...的ASCII码是从97开始，为了保证索引是从0,1,2开始，所以要求出a对应的ASCII值，然后减去a的ASCII值
 	let charCodeAtA = 'a'.charCodeAt()
 
 	let target = new Set();	//用来存放翻译后的单词
 
-	fo(let i of words){
+	for(let i of words){
 		let tmp = ''; //临时变量，用于存放翻译后单词
 		for(let j of i){
-			tmp = tmp + code[j.charCodeAt() - charCodeAt] ////获取单词中的字母的ascii（10进制）值-获取字母‘a’的ascii（10进制）值（为了取每个字母对应的摩尔斯密码）
+			tmp = tmp + code[j.charCodeAt() - charCodeAtA] ////获取单词中的字母的ascii（10进制）值-获取字母‘a’的ascii（10进制）值（为了取每个字母对应的摩尔斯密码）
 		}
 		target.add(tmp);
 	}
