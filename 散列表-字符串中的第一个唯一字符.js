@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-28 13:38:34
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-28 14:01:09
+* @Last Modified time: 2019-08-28 15:01:12
 */
 
 /*
@@ -53,4 +53,30 @@ var firstUniqChar = function(s){
 		}
 	}
 	return -1;
+}
+
+//第三种方法：HashTable/散列表/哈希表
+/*
+哈希函数：把我们所关心的类型转换成所对应索引的函数
+本题中，我们可以把所关心的内容abc...z转化成数组中的一个索引，存储在数组中，这样就可以以O(1)的复杂度进行查询等操作
+如本题中a对应0，b对应1，c对应2，...，z对应25等等
+*/
+var firstUniqChar = function(s){
+
+	var res = Array(26).fill(0);
+
+	for(let i=0;i<s.length;i++){
+		res[s[i].charCodeAt() - 97]++;
+	}
+
+	//console.log(res) [0, 0, 1, 1, 3, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+
+	for (let j = 0; j < s.length; j++) {
+        if (res[s[j].charCodeAt() - 97] === 1) {
+            return j
+        }
+    }
+
+	return -1
+
 }
