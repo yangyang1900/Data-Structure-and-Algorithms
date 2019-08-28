@@ -63,6 +63,14 @@
 
 
 
+##### 8.递归
+
+- 计算一个数的阶乘
+- 斐波那契数列
+- 复原IP地址问题
+
+
+
 ---
 
 **十大经典排序算法**
@@ -122,6 +130,8 @@ bobo老师的《玩转算法系列——数据结构精讲》、《算法与数�
 <https://www.cnblogs.com/xiaohuochai/tag/javascript%E6%80%BB%E7%BB%93/> 
 
 <https://segmentfault.com/a/1190000020011987> 
+
+bobo老师课程JavaScript版本：<https://github.com/biaodigit/Play-with-Data-Structures> 
 
 十大经典排序算法：
 
