@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-28 13:38:34
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-28 15:01:12
+* @Last Modified time: 2019-08-28 15:09:00
 */
 
 /*
@@ -66,12 +66,14 @@ var firstUniqChar = function(s){
 	var res = Array(26).fill(0);
 
 	for(let i=0;i<s.length;i++){
-		res[s[i].charCodeAt() - 97]++;
+		res[s[i].charCodeAt() - 97]++;	//我们此时res是一个包含26个元素的数组，且初始都为0，如果s中包含l这个字母，我们在
+										//l在res数组中对应的位置+1，以此类推，这就是一种hash函数，把字符串中字母与数组中元素对应起来
 	}
 
+	//firstUniqChar("leetcode")，返回此时res
 	//console.log(res) [0, 0, 1, 1, 3, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
 
-	for (let j = 0; j < s.length; j++) {
+	for (let j = 0; j < s.length; j++) {	//我们再一次循环，分别查看s中每一个字母元素在数组中对应的值，如果为1就返回此时s中索引
         if (res[s[j].charCodeAt() - 97] === 1) {
             return j
         }
