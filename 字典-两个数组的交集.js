@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-28 09:31:07
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-28 11:53:04
+* @Last Modified time: 2019-08-28 15:50:05
 */
 
 /*
@@ -69,9 +69,9 @@ var intersect = function(nums1,nums2){
 
 	for(let i=0;i<nums1.length;i++){ //遍历第一个数组
 		if(hash.has(nums1[i])){	//如果字典/映射中有对应的值，key为数组值，value为出现次数
-			has.set(nums1[i],has.get(nums1[i])+1)
+			hash.set(nums1[i],hash.get(nums1[i])+1)
 		}else{
-			has.set(nums1[i],1)
+			hash.set(nums1[i],1)
 		}
 	}
 
@@ -81,13 +81,13 @@ var intersect = function(nums1,nums2){
 		let temp = nums2[i];
 		let hasKey = has.get(temp)	//获取字典/映射中元素出现的次数hasKey
 		if(hash.has(temp)){
-			res.push(temp){
-				if(hasKey>1){
-					has.set(temp,hasKey-1)；
-				}else{
-					hash.delete(temp)
-				}
+			res.push(temp);
+			if(hasKey>1){
+				has.set(temp,hasKey-1);
+			}else{
+				hash.delete(temp)
 			}
+			
 		}
 		return res;
 	}
