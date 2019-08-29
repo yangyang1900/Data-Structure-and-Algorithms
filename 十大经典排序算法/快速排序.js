@@ -2,7 +2,7 @@
 * @Author: yangyang
 * @Date:   2019-08-25 09:01:32
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-25 09:46:10
+* @Last Modified time: 2019-08-29 13:23:09
 */
 
 /*
@@ -11,6 +11,7 @@
 https://juejin.im/post/5966f57051882568b20dc3e1
 https://github.com/hustcc/JS-Sorting-Algorithm/blob/master/6.quickSort.md
 https://www.jianshu.com/p/f5b157a974b0
+https://juejin.im/post/5966f57051882568b20dc3e1#heading-8
 */
 
 //方法一：借助新的数组，这种比较好理解
