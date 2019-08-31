@@ -2,11 +2,15 @@
 * @Author: yangyang
 * @Date:   2019-08-30 10:09:58
 * @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-30 15:20:37
+* @Last Modified time: 2019-08-31 11:23:21
 */
 
 /*
 树数据结构的实现
+参考文章：
+《JavaScript数据结构与算法》
+https://www.imooc.com/learn/888
+https://www.cnblogs.com/xiaohuochai/p/8184989.html
 */
 
 function BinarySearchTree(){
@@ -58,44 +62,47 @@ function BinarySearchTree(){
 
 	};
 
+	// 节点的中序排序
+    this.inOrderTraverse = function(node, callback) {
+        if (node.left !== null) {
+            this.infix(node.left, callback);
+        }
+        callback(node.key);
+        if (node.right !== null) {
+            this.infix(node.right, callback);
+        }
+    }
+
+    //先序排序
+    this.preOrderTraverseNode = function(node, callback) {
+
+    	callback(node.key);
+        if (node.left !== null) {
+            this.infix(node.left, callback);
+        }
+        if (node.right !== null) {
+            this.infix(node.right, callback);
+        }
+
+    }
+
+    //后序排序
+    this.postOrderTraverseNode = function(node, callback) {
+
+        if (node.left !== null) {
+            this.infix(node.left, callback);
+        }
+        if (node.right !== null) {
+            this.infix(node.right, callback);
+        }
+        callback(node.key);
+
+    }
+
 }
 
-//1.中序遍历
-var tree = new BinarySearchTree(); 
-
-this.inOrderTraverse = function(callback){
-	inOrderTraverseNode(root,callback);
+// 输出函数|中序排序的回调函数
+var dump=function(node){
+	console.log(node);
 }
-
-var inOrderTraverseNode = function(node,callback){
-	if (node!==null) {
-		inOrderTraverseNode(node.left,callback);
-		callback(node.key);
-		inOrderTraverseNode(node.right,callback);
-	}
-}
-//回调函数callback
-function printNode(value){
-	console.log(value);
-}
-//tree调用中序遍历
-tree.inOrderTraverse(printNode);
-
-//2.先序遍历（相对中序遍历只需要修改inOrderTraverseNode函数）
-var preOrderTraverseNode = function (node, callback) { 
-  if (node !== null) {
-    callback(node.key);  
-    preOrderTraverseNode(node.left, callback);  
-    preOrderTraverseNode(node.right, callback); 
-  }
-};
-
-//3.后序遍历，同样只需要修改inOrderTraverseNode函数
-var postOrderTraverseNode = function (node, callback) { 
-  if (node !== null) {
-    postOrderTraverseNode(node.left, callback);  
-    postOrderTraverseNode(node.right, callback);  
-    callback(node.key);  
-  }
-};
 
