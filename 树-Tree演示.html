@@ -1,0 +1,89 @@
+<!--
+参考资料：
+https://www.imooc.com/learn/888
+https://github.com/qq326943819/Binary-Tree
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BinaryTree</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function BinaryTree() {
+        // 生产节点对象
+        var Node = function(key) {
+            this.key = key;
+            this.left = null;
+            this.right = null;
+        }
+        // 根节点
+        this.root = null;
+        // 插入节点的方法
+        var insertNode = function(node, newNode) {
+            if (newNode.key < node.key) {
+                if (node.left === null) {
+                    node.left = newNode;
+                } else {
+                    insertNode(node.left, newNode);
+                }
+            } else {
+                if (node.right === null) {
+                    node.right = newNode;
+                } else {
+                    insertNode(node.right, newNode);
+                }
+            }
+        }
+        // 插入节点的接口
+        this.insert = function(key) {
+            var newNode = new Node(key);
+            if (this.root === null) {
+                this.root = newNode;
+            } else {
+                insertNode(this.root, newNode);
+            }
+        }
+        // 节点的中序排序
+        this.infix = function(node, callback) {
+            if (node.left !== null) {
+                this.infix(node.left, callback);
+            }
+            callback(node.key);
+            if (node.right !== null) {
+                this.infix(node.right, callback);
+            }
+        }
+    }
+    // 输出函数
+    var dump=function(node){
+    	console.log(node);
+    }
+    </script>
+</body>
+
+</html>
+
+<!--
+
+如何在浏览器演示创建树和中序排列（以下均在浏览器控制台输入输出）
+
+1.实例化二叉树
+const cancan = new BinaryTree()
+
+2.定义数组节点
+var nodes = [1,11,111,2,22,222,3,33,333,4]
+
+3.把节点插入到二叉树中
+nodes.forEach(function(node){
+  cancan.insert(node)
+})
+
+4.排序并输出二叉树
+cancan.infix(cancan.root,dump)
+
+-->
