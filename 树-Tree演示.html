@@ -49,14 +49,39 @@ https://github.com/qq326943819/Binary-Tree
             }
         }
         // 节点的中序排序
-        this.infix = function(node, callback) {
+        this.infix1 = function(node, callback) {
             if (node.left !== null) {
-                this.infix(node.left, callback);
+                this.infix1(node.left, callback);
             }
             callback(node.key);
             if (node.right !== null) {
-                this.infix(node.right, callback);
+                this.infix1(node.right, callback);
             }
+        }
+
+        // 节点的前序排序
+        this.infix2 = function(node, callback) {
+
+            callback(node.key);
+            if (node.left !== null) {
+                this.infix2(node.left, callback);
+            }
+            
+            if (node.right !== null) {
+                this.infix2(node.right, callback);
+            }
+        }
+
+        // 节点的后序排序
+        this.infix3 = function(node, callback) {
+            if (node.left !== null) {
+                this.infix3(node.left, callback);
+            }
+            
+            if (node.right !== null) {
+                this.infix3(node.right, callback);
+            }
+            callback(node.key);
         }
     }
     // 输出函数
@@ -84,6 +109,6 @@ nodes.forEach(function(node){
 })
 
 4.中序排序并输出二叉树
-cancan.infix(cancan.root,dump)
+cancan.infix1(cancan.root,dump)
 
 -->
