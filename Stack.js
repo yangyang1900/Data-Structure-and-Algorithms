@@ -1,8 +1,8 @@
 /*
 * @Author: yangyang
 * @Date:   2019-08-21 16:38:54
-* @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-21 19:43:18
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2021-10-07 01:23:15
 */
 
 /*
@@ -45,7 +45,7 @@ class Stack{
 
 	constructor(){
 		this.count = 0;		//count属性来帮助我们记录栈的大小，也能帮助我们从数据结构中添加和删除元素
-		this.items = {}
+		this.items = []
 	}
 
 	push(element){

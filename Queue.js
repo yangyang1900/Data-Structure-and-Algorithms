@@ -1,8 +1,8 @@
 /*
 * @Author: yangyang
 * @Date:   2019-08-22 15:43:34
-* @Last Modified by:   yangyang
-* @Last Modified time: 2019-08-22 17:00:11
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2021-10-07 01:35:28
 */
 
 /*
@@ -43,12 +43,13 @@ function Queue() {
     };
 }
 
-//ES5 基于对象实现
+//ES6 基于对象实现
 class Queue{
 
 	constructor(){
 		this.count = 0;
 		this.lowestCount = 0;	//此外，由于我们将要从队列前端移除元素，同样需要一个变量来帮助我们追踪第一个元素。因此，声明一个lowestCount变量
+		this.items = {}
 	}
 
 	enqueue(element){ //队列尾部添加一个（或多个）新的项
