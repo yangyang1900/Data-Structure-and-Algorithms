@@ -41,8 +41,6 @@ Stack（栈）、Queue（队列）、LinkedList（链表）、Set（集合）、
 - 唯一的摩尔斯密码词问题
 - 两个数组的交集Ⅰ问题
 
-
-
 ##### 6.Map（字典/映射）
 - Map实现
 - 两个数组的交集Ⅱ问题
@@ -96,7 +94,10 @@ Stack（栈）、Queue（队列）、LinkedList（链表）、Set（集合）、
 
 ---
 
+
+
 **十大经典排序算法**
+
 - 插入排序
 - 希尔排序
 - 选择排序
@@ -110,12 +111,14 @@ Stack（栈）、Queue（队列）、LinkedList（链表）、Set（集合）、
 ![十大排序算法时间复杂度和空间复杂度以及稳定性](https://github.com/hustcc/JS-Sorting-Algorithm/raw/master/res/sort.png) 
 
 
+
 **关于时间复杂度**：
 
 1. 平方阶 (O(n2)) 排序 各类简单排序：插入排序、选择排序和冒泡排序。
 2. 线性对数阶 (O(nlog2n)) 排序：快速排序、堆排序和归并排序；
 3. O(n1+§)) 排序，§ 是介于 0 和 1 之间的常数。 希尔排序
 4. 线性阶 (O(n)) 排序 基数排序，此外还有桶、箱排序。
+
 
 
 **关于稳定性**：
@@ -132,7 +135,28 @@ Stack（栈）、Queue（队列）、LinkedList（链表）、Set（集合）、
 ##### 第二部分：《剑指Offer》分类整理：
 
 参考地址：
-<https://xin-tan.com/passages/2019-06-23-algorithm-offer/#%E4%BB%8B%E7%BB%8D> 
+
+https://juejin.cn/post/6844903875904815111#comment
+
+https://xin-tan.com/algorithm/#%E3%80%8A%E5%89%91%E6%8C%87-Offer%E3%80%8B-JavaScript-%E7%89%88%E8%AE%B2%E8%A7%A3
+
+https://github.com/DavidChen93/-offer-JS-
+
+https://github.com/luxiangqiang/JianZhi-Offer_JavaScript
+
+https://shenlvmeng.github.io/blog/2017/07/27/interview-algorithm-md/
+
+https://juejin.cn/post/6844903921496899592#comment
+
+https://github.com/14glwu/FEInterviewBox/tree/master/%E5%89%91%E6%8C%87offer
+
+https://www.cnblogs.com/wuguanglin/p/code-interview.html
+
+
+
+JS刷题经验：https://www.nowcoder.com/discuss/72658
+
+
 
 
 ##### 1.字符串
@@ -211,16 +235,16 @@ Stack（栈）、Queue（队列）、LinkedList（链表）、Set（集合）、
 
 ---
 
-本书主要结合书籍、视频和网络文章进行资料整合和学习，记录自己学习数据结构与算法的过程。
+
+
+本仓库主要结合书籍、视频和网络文章进行资料整合和学习，记录自己学习数据结构与算法的过程。
 
 
 参考书籍：
 《我的第一本算法书》及配套APP、《学习JavaScript数据结构与算法》、《算法图解》、《数据结构与算法图解》
 
-
 参考视频：
 bobo老师的《玩转算法系列——数据结构精讲》、《算法与数据结构》、快乐动起来老师的《JavaScript数据结构与算法》，请支持老师正版。
-
 
 参考文章（不断更新）：
 <https://www.cnblogs.com/xiaohuochai/tag/javascript%E6%80%BB%E7%BB%93/> 
@@ -235,8 +259,6 @@ bobo老师课程JavaScript版本：
 
 十大经典排序算法：
 <https://github.com/hustcc/JS-Sorting-Algorithm> 
-
-
 
 
 
