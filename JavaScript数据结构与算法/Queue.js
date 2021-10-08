@@ -2,46 +2,13 @@
 * @Author: yangyang
 * @Date:   2019-08-22 15:43:34
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2021-10-07 01:35:28
+ * @Last Modified time: 2021-10-08 23:29:00
 */
 
 /*
 队列实现
+https://juejin.cn/post/6844903858888507405#heading-8
 */
-
-//ES5 基于数组实现
-function Queue() {
-
-    let items = [];
-
-    this.enqueue = function(element){
-        items.push(element);
-    };
-
-    this.dequeue = function(){
-        return items.shift();
-    };
-
-    this.front = function(){
-        return items[0];
-    };
-
-    this.isEmpty = function(){
-        return items.length == 0;
-    };
-
-    this.clear = function(){
-        items = [];
-    };
-
-    this.size = function(){
-        return items.length;
-    };
-
-    this.print = function(){
-        console.log(items.toString());
-    };
-}
 
 //ES6 基于对象实现
 class Queue{

@@ -2,44 +2,54 @@
 * @Author: yangyang
 * @Date:   2019-08-21 16:38:54
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2021-10-07 01:23:15
+ * @Last Modified time: 2021-10-08 23:22:55
 */
 
 /*
 	栈数据结构
+	https://juejin.cn/post/6844903846666338318
 */
 
-//我们基于ES5 将利用数组来表示栈
-function Stack() {
-  //我们需要一种数据结构来保存栈里的元素，可以选择数组
-  var items = [];
-  this.push = function(element){//添加一个（或几个）新元素到栈顶
-    items.push(element);
-  };
-  this.pop = function(){//移除栈顶的元素，同时返回被移除元素
-    return items.pop();
-  };
-  this.peek = function(){//返回栈顶的元素，但并不对栈做任何修改
-    return items[items.length-1];
-  };
-  this.isEmpty = function(){//如果栈内没有任何元素就返回true，否则返回false
-    return items.length == 0;
-  };
-  this.size = function(){//返回栈里的元素个数
-    return items.length;
-  };
-  this.clear = function(){//移除栈里的所有元素
-    items = [];
-  };
-  this.print = function(){//打印
-    console.log(items.toString());
-  };
-  this.toString = function(){
-    return items.toString();
-  };
+//我们将利用数组来表示栈
+class stackArray {
+  constructor() {
+		this.items = [];
+	}
+
+	push(element) {
+			this.items.push(element);
+	}
+
+	pop() {
+			return this.items.pop();
+	}
+
+	peek() {
+			return this.items[this.items.length - 1];
+	}
+
+	isEmpty() {
+			return this.items.length === 0;
+	}
+
+	size() {
+			return this.items.length;
+	}
+
+	clear() {
+			this.items = [];
+	}
+
+	toArray() {
+			return this.items;
+	}
+
+	toString() {
+			return this.items.toString();
+	}
 }
 
-//基于ES6 将利用对象来创建一个栈
+//将利用对象来创建一个栈
 
 class Stack{
 
